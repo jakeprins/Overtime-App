@@ -1,1 +1,9 @@
-= @post.inspect
+.h2 = @post.rationale
+.well
+  .h4 = "Overtime Amount Requested: #{@post.overtime_request}"
+  .h4 = "Employee: #{@post.user.full_name}"
+  .h4 = "Date: #{@post.date}"
+  .h4 = "Current Stage of Approval: #{@post.status}"
+
+= link_to 'Edit', edit_post_path(@post), class: 'btn btn-primary' if policy(@post).update?
+

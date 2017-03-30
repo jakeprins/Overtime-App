@@ -3,7 +3,7 @@ tr
   td = post.overtime_request
   td = post.date
   td = post.user.full_name
-  td = truncate(post.rationale)
+  td = link_to truncate(post.rationale), post
   td = status_label(post.status)
   td = link_to 'Edit', edit_post_path(post), id: "edit_#{post.id}" if policy(post).update?
   td = link_to 'Delete', post_path(post), method: :delete, id: "delete_post_#{post.id}_from_index", data: { confirm: 'Are you sure?' }
